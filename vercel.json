@@ -6,9 +6,8 @@
       "use": "@vercel/node"
     },
     {
-      "src": "package.json",
-      "use": "@vercel/next",
-      "config": { "distDir": "build" }
+      "src": "build/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -18,8 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/build/$1",
-      "continue": true
+      "dest": "/build/$1"
     }
   ],
   "env": {
